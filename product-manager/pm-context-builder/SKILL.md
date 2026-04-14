@@ -1,7 +1,7 @@
 ---
 name: pm-context-builder
 description: >
-  PM skill: Create and maintain the context files that all PM skills read automatically — product.md, company.md, personas.md, competitors.md, goals.md, and backlog.md. Run this first before using any PM orchestrator or skill. The richer these files, the less you need to explain in every session. Triggers for: "setup context", "create context files", "pm context", "configurar contexto", "criar arquivos de contexto", "setup inicial", "começar a usar as skills", "pm os setup", "what context files do I need".
+  PM skill: Create and maintain the context files that all PM skills read automatically - product.md, company.md, personas.md, competitors.md, goals.md, and backlog-product.md. Run this first before using any PM orchestrator or skill. The richer these files, the less you need to explain in every session. Triggers for: "setup context", "create context files", "pm context", "configurar contexto", "criar arquivos de contexto", "setup inicial", "começar a usar as skills", "pm os setup", "what context files do I need".
 ---
 
 # PM Context Builder
@@ -9,7 +9,6 @@ description: >
 Creates and maintains the six context files that all PM skills read automatically. Run this once to set up, then update incrementally as your product and company evolve.
 
 **Language:** Conversation in English. Output files in Portuguese (Brazil) where content is PT-BR, English where content is EN.
-**Output location:** `context/` folder
 
 ---
 
@@ -24,14 +23,14 @@ With context files: skills pull what they need silently and ask only for what's 
 
 ## The six context files
 
-| File | What it contains | Updated when |
-|------|-----------------|--------------|
-| `context/product.md` | Value prop, roadmap, metrics, known issues, pricing, activation rate | After planning cycles, when metrics change |
-| `context/company.md` | Strategic priorities, OKRs, team structure, business model, capacity | Quarterly or when strategy shifts |
-| `context/personas.md` | User segments, jobs-to-be-done, pains, gains, aha moments | After discovery research |
-| `context/competitors.md` | Competitor profiles, win/loss themes, pricing, feature gaps | When competitive landscape shifts |
-| `goals.md` | Current OKRs, quarterly targets, success metrics, blockers | Every quarter |
-| `context/backlog.md` | Prioritized initiatives and tasks, current sprint items | Weekly or after planning |
+| File                 | What it contains                                                     | Updated when                               |
+| -------------------- | -------------------------------------------------------------------- | ------------------------------------------ |
+| `product.md`         | Value prop, roadmap, metrics, known issues, pricing, activation rate | After planning cycles, when metrics change |
+| `company.md`         | Strategic priorities, OKRs, team structure, business model, capacity | Quarterly or when strategy shifts          |
+| `personas.md`        | User segments, jobs-to-be-done, pains, gains, aha moments            | After discovery research                   |
+| `competitors.md`     | Competitor profiles, win/loss themes, pricing, feature gaps          | When competitive landscape shifts          |
+| `goals.md`           | Current OKRs, quarterly targets, success metrics, blockers           | Every quarter                              |
+| `backlog-product.md` | Prioritized initiatives and tasks, current sprint items              | Weekly or after planning                   |
 
 ---
 
@@ -49,29 +48,30 @@ Read existing files, show what's outdated or missing, ask only for the gaps.
 
 ### Mode A: First Setup
 
-Tell the PM what you're doing:
-> "I'm going to ask you a series of questions across six areas. This will take about 15–20 minutes. The output is six files that all PM skills will read automatically — you'll never need to explain your product, company, or users from scratch again."
+Tell what you're doing:
 
-Run the interviews in this order. Ask each section as a single conversational message — not one question at a time.
+> "I'm going to ask you a series of questions across six areas. This will take about 15–20 minutes. The output is six files that all product manager skills will read automatically, you'll never need to explain your product, company, or users from scratch again."
+
+Run the interviews in this order. Ask each section as a single conversational message, not one question at a time.
 
 ---
 
-#### Interview 1: Product (`context/product.md`)
+#### Interview 1: Product (`product.md`)
 
 Ask:
 
 > "Let's start with your product. Tell me:
 >
-> 1. **What does your product do?** One sentence — what problem does it solve and for whom?
+> 1. **What does your product do?** One sentence, what problem does it solve and for whom?
 > 2. **What's your current roadmap?** What are you building Now, Next, and Later?
-> 3. **What are your key metrics?** (activation rate, retention, NPS, ARR, churn — whatever you track)
+> 3. **What are your key metrics?** (activation rate, retention, NPS, ARR, Churn, whatever you track)
 > 4. **What are the known issues or pain points in the product?** What do users complain about most?
 > 5. **What's your pricing model?** (tiers, price points, model type)
 > 6. **What's your current value proposition?** How do you describe what makes you different?"
 
 ---
 
-#### Interview 2: Company (`context/company.md`)
+#### Interview 2: Company (`company.md`)
 
 Ask:
 
@@ -86,7 +86,7 @@ Ask:
 
 ---
 
-#### Interview 3: Personas (`context/personas.md`)
+#### Interview 3: Personas (`personas.md`)
 
 Ask:
 
@@ -100,7 +100,7 @@ Ask:
 
 ---
 
-#### Interview 4: Competitors (`context/competitors.md`)
+#### Interview 4: Competitors (`competitors.md`)
 
 Ask:
 
@@ -128,13 +128,13 @@ Ask:
 
 ---
 
-#### Interview 6: Backlog (`context/backlog.md`)
+#### Interview 6: Backlog (`backlog-product.md`)
 
 Ask:
 
 > "Finally, your backlog:
 >
-> 1. **What are the top 5–10 initiatives or features you're considering building?** (doesn't need to be formal — a list is fine)
+> 1. **What are the top 5–10 initiatives or features you're considering building?** (doesn't need to be formal, a list is fine)
 > 2. **What's in your current sprint or being worked on right now?**
 > 3. **What's explicitly on hold or deferred?** Things you've said 'not now' to."
 
@@ -143,6 +143,7 @@ Ask:
 ### After all interviews: generate the files
 
 Generate all six files sequentially. Use the templates below. After each file, say:
+
 > "Here's `[filename]`. Review it — does this capture your situation accurately? Anything to adjust before I move to the next file?"
 
 Wait for confirmation before generating the next file.
@@ -151,7 +152,7 @@ Wait for confirmation before generating the next file.
 
 ## Output templates
 
-### `context/product.md`
+### `product.md`
 
 ```markdown
 # Product Context
@@ -169,31 +170,34 @@ Wait for confirmation before generating the next file.
 ## Roadmap Atual
 
 ### Now (fazendo agora)
+
 - [Iniciativa 1]
 - [Iniciativa 2]
 
 ### Next (fazendo em seguida)
+
 - [Iniciativa 1]
 
 ### Later (planejado para depois)
+
 - [Iniciativa 1]
 
 ## Métricas-Chave
 
-| Métrica | Valor Atual | Meta | Última Atualização |
-|---------|------------|------|-------------------|
-| [Métrica] | [Valor] | [Meta] | [Data] |
+| Métrica   | Valor Atual | Meta   | Última Atualização |
+| --------- | ----------- | ------ | ------------------ |
+| [Métrica] | [Valor]     | [Meta] | [Data]             |
 
 ## Problemas Conhecidos
 
-- [Problema 1 — o que usuários reclamam]
+- [Problema 1]
 - [Problema 2]
 
 ## Pricing
 
-| Tier | Preço | Público |
-|------|-------|---------|
-| [Tier] | [Preço] | [Quem] |
+| Tier   | Preço   | Público |
+| ------ | ------- | ------- |
+| [Tier] | [Preço] | [Quem]  |
 
 **Modelo:** [Seat-based / Usage-based / Flat fee / Hybrid]
 
@@ -206,7 +210,7 @@ Wait for confirmation before generating the next file.
 
 ---
 
-### `context/company.md`
+### `company.md`
 
 ```markdown
 # Company Context
@@ -233,34 +237,36 @@ Wait for confirmation before generating the next file.
 
 ## Estrutura do Time
 
-| Função | Headcount |
-|--------|-----------|
-| Produto | [N] |
-| Engenharia | [N] |
-| Design | [N] |
-| Vendas | [N] |
-| CS | [N] |
+| Função     | Headcount |
+| ---------- | --------- |
+| Produto    | [N]       |
+| Engenharia | [N]       |
+| Design     | [N]       |
+| Vendas     | [N]       |
+| CS         | [N]       |
 
 ## OKRs do Quarter
 
 **Quarter:** [Q e Ano]
 
 ### Objetivo 1: [Nome]
+
 - KR 1: [Baseline] → [Meta]
 - KR 2: [Baseline] → [Meta]
 
 ### Objetivo 2: [Nome]
+
 - KR 1: [Baseline] → [Meta]
 
 ## Restrições Conhecidas
 
-- [Restrição 1 — ex: sem nova infraestrutura antes do Series B]
+- [Restrição 1]
 - [Restrição 2]
 ```
 
 ---
 
-### `context/personas.md`
+### `personas.md`
 
 ```markdown
 # Personas
@@ -285,7 +291,7 @@ Wait for confirmation before generating the next file.
 
 ### Maiores Dores
 
-1. [Dor 1 — com linguagem do usuário se possível]
+1. [Dor 1]
 2. [Dor 2]
 3. [Dor 3]
 
@@ -295,7 +301,7 @@ Wait for confirmation before generating the next file.
 
 ### Citações Reais
 
-> "[Citação de entrevista ou suporte]"
+> "[Citação 1]"
 > "[Citação 2]"
 
 ### Processo de Compra
@@ -311,7 +317,7 @@ Wait for confirmation before generating the next file.
 
 ---
 
-### `context/competitors.md`
+### `competitors.md`
 
 ```markdown
 # Competitive Intelligence
@@ -331,20 +337,25 @@ Wait for confirmation before generating the next file.
 **Pricing:** [Tiers e valores aproximados]
 
 **O que fazem bem (por que clientes escolhem eles):**
+
 - [Ponto 1]
 - [Ponto 2]
 
 **Fraquezas (onde falham):**
+
 - [Fraqueza 1]
 - [Fraqueza 2]
 
 **Nossos temas de vitória contra eles:**
+
 - [Quando ganhamos]
 
 **Nossos temas de derrota para eles:**
+
 - [Quando perdemos]
 
 **Movimentos recentes:**
+
 - [Data]: [O que fizeram — lançamento, funding, mudança de pricing]
 
 ---
@@ -357,10 +368,10 @@ Wait for confirmation before generating the next file.
 
 ## Matriz de Features
 
-| Feature | Nós | [Comp 1] | [Comp 2] |
-|---------|-----|---------|---------|
-| [Feature] | ✅ | ✅ | ❌ |
-| [Feature] | ✅ | ❌ | ✅ |
+| Feature   | Nós | [Comp 1] | [Comp 2] |
+| --------- | --- | -------- | -------- |
+| [Feature] | ✅  | ✅       | ❌       |
+| [Feature] | ✅  | ❌       | ✅       |
 ```
 
 ---
@@ -379,22 +390,22 @@ Wait for confirmation before generating the next file.
 
 ### Objetivo 1: [Nome inspiracional]
 
-| Key Result | Baseline | Meta | Atual | Status |
-|-----------|----------|------|-------|--------|
-| [KR 1] | [X] | [Y] | [Atual] | 🟢/🟡/🔴 |
-| [KR 2] | [X] | [Y] | [Atual] | 🟢/🟡/🔴 |
+| Key Result | Baseline | Meta | Atual   | Status   |
+| ---------- | -------- | ---- | ------- | -------- |
+| [KR 1]     | [X]      | [Y]  | [Atual] | 🟢/🟡/🔴 |
+| [KR 2]     | [X]      | [Y]  | [Atual] | 🟢/🟡/🔴 |
 
 ### Objetivo 2: [Nome]
 
-| Key Result | Baseline | Meta | Atual | Status |
-|-----------|----------|------|-------|--------|
-| [KR 1] | [X] | [Y] | [Atual] | 🟢/🟡/🔴 |
+| Key Result | Baseline | Meta | Atual   | Status   |
+| ---------- | -------- | ---- | ------- | -------- |
+| [KR 1]     | [X]      | [Y]  | [Atual] | 🟢/🟡/🔴 |
 
 ---
 
 ## Maiores Bloqueadores
 
-1. [Bloqueador 1 — o que está impedindo o progresso]
+1. [Bloqueador 1]
 2. [Bloqueador 2]
 
 ---
@@ -402,13 +413,14 @@ Wait for confirmation before generating the next file.
 ## Histórico de OKRs Anteriores
 
 ### [Q anterior]
-- [Objetivo 1]: [Resultado — 0.7 / Não atingiu / Atingiu]
+
+- [Objetivo 1]: [Resultado]
 - [Objetivo 2]: [Resultado]
 ```
 
 ---
 
-### `context/backlog.md`
+### `backlog-product.md`
 
 ```markdown
 # Backlog
@@ -419,33 +431,33 @@ Wait for confirmation before generating the next file.
 
 ## Em Andamento (Sprint Atual)
 
-| Item | Owner | Status |
-|------|-------|--------|
+| Item   | Owner  | Status       |
+| ------ | ------ | ------------ |
 | [Item] | [Nome] | Em progresso |
 
 ---
 
 ## Próximas Iniciativas (P0/P1)
 
-| Item | Prioridade | Tamanho est. | Notas |
-|------|-----------|-------------|-------|
-| [Item] | P0 | M | [Contexto] |
-| [Item] | P1 | G | [Contexto] |
+| Item   | Prioridade | Tamanho est. | Notas      |
+| ------ | ---------- | ------------ | ---------- |
+| [Item] | P0         | M            | [Contexto] |
+| [Item] | P1         | G            | [Contexto] |
 
 ---
 
 ## Backlog (P2/P3)
 
-| Item | Prioridade | Por que ainda não |
-|------|-----------|------------------|
-| [Item] | P2 | [Motivo] |
+| Item   | Prioridade | Por que ainda não |
+| ------ | ---------- | ----------------- |
+| [Item] | P2         | [Motivo]          |
 
 ---
 
 ## Explicitamente Adiado
 
-| Item | Motivo | Quando revisar |
-|------|--------|----------------|
+| Item   | Motivo         | Quando revisar |
+| ------ | -------------- | -------------- |
 | [Item] | [Motivo claro] | [Q ou trigger] |
 ```
 
@@ -461,12 +473,12 @@ If context files already exist:
 ```
 CONTEXTO ATUAL — Status
 
-context/product.md    ✅ Atualizado (há 2 semanas)
-context/company.md    ⚠️  Pode estar desatualizado (há 3 meses)
-context/personas.md   ✅ Atualizado (há 1 mês)
-context/competitors.md ❌ Vazio ou muito incompleto
+product.md            ✅ Atualizado (há 2 semanas)
+company.md            ⚠️  Pode estar desatualizado (há 3 meses)
+personas.md           ✅ Atualizado (há 1 mês)
+competitors.md        ❌ Vazio ou muito incompleto
 goals.md              ⚠️  Quarter anterior ainda no arquivo
-context/backlog.md    ✅ Atualizado
+backlog-product.md    ✅ Atualizado
 ```
 
 3. Ask only about outdated or missing sections
@@ -478,11 +490,11 @@ context/backlog.md    ✅ Atualizado
 
 Each skill will suggest updating context files when it finds relevant new information. Common triggers:
 
-- After a planning cycle → update `context/product.md` (roadmap) and `goals.md`
-- After discovery research → update `context/personas.md`
-- After a competitive win/loss → update `context/competitors.md`
-- After a strategy shift → update `context/company.md`
-- After sprint planning → update `context/backlog.md`
+- After a planning cycle → update `product.md` (roadmap) and `goals.md`
+- After discovery research → update `personas.md`
+- After a competitive win/loss → update `competitors.md`
+- After a strategy shift → update `company.md`
+- After sprint planning → update `backlog-product.md`
 
 ---
 
@@ -490,17 +502,15 @@ Each skill will suggest updating context files when it finds relevant new inform
 
 Context files created here are also consumed by agents in other pipelines:
 
-| File | Also read by | What they extract |
-|------|-------------|-------------------|
-| `context/personas.md` | `pd-ux-artifacts-agent` | Personas and JTBD as input for Empathy Maps and Journey Maps |
-| `context/personas.md` | `pd-research-agent` | Known jobs to build focused research guides, not rediscover what's documented |
-| `context/personas.md` | `pd-strategy-agent` | Real user pains and jobs to anchor problem statements and opportunity matrices |
-| `context/personas.md` | `component-orchestrator` | "For whom is this component" — skips that interview question |
-| `context/product.md` | `pd-strategy-agent` | Current metrics as baselines for design success criteria |
+| File          | Also read by             | What they extract                                                              |
+| ------------- | ------------------------ | ------------------------------------------------------------------------------ |
+| `personas.md` | `pd-ux-artifacts-agent`  | Personas and JTBD as input for Empathy Maps and Journey Maps                   |
+| `personas.md` | `pd-research-agent`      | Known jobs to build focused research guides, not rediscover what's documented  |
+| `personas.md` | `pd-strategy-agent`      | Real user pains and jobs to anchor problem statements and opportunity matrices |
+| `personas.md` | `component-orchestrator` | "For whom is this component", skips that interview question                    |
+| `product.md`  | `pd-strategy-agent`      | Current metrics as baselines for design success criteria                       |
 
-**This means:** the richer your `context/personas.md`, the better every design artifact produced
-by the Product Designer pipeline will be — without the designer having to re-enter any of it.
-The PM's discovery work flows directly into the designer's output quality.
+**This means:** the richer your `context/personas.md`, the better every design artifact produced by the Product Designer pipeline will be — without the designer having to re-enter any of it. The product manager discovery work flows directly into the designer's output quality.
 
 ---
 
@@ -513,6 +523,7 @@ Orchestrators will prompt you at each gate if new findings should update context
 **Decline:** Say "No, not now" — the finding is noted in the skill output but context files are not changed.
 
 **Suggested update format in gates:**
+
 ```
 Os achados desta skill revelaram algo novo:
 — [Novo job identificado] → sugiro adicionar a context/personas.md
@@ -529,12 +540,12 @@ This keeps context files current without requiring you to remember to update the
 
 When reading context files, skills will flag staleness:
 
-- **🟢 Current** — updated within 4 weeks
-- **🟡 May be stale** — last updated 1–3 months ago
-- **🔴 Likely outdated** — no update in 3+ months or quarter has changed
+- **🟢 Current** → updated within 4 weeks
+- **🟡 May be stale** → last updated 1–3 months ago
+- **🔴 Likely outdated** → no update in 3+ months or quarter has changed
 
-A 🔴 flag doesn't block the skill — it warns you that the output will be less personalized.
+A 🔴 flag doesn't block the skill, it warns you that the output will be less personalized.
 
 ---
 
-*Entrega concluída. O orquestrador apresentará o gate de revisão.*
+_Entrega concluída. O orquestrador apresentará o gate de revisão._
