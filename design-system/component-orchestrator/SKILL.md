@@ -20,7 +20,7 @@ Conversation in English. Output files in Portuguese (Brazil) where content is PT
 
 | Agent name                  | When                                                         |
 | --------------------------- | ------------------------------------------------------------ |
-| `component-context-builder` | Always first — captures component definition via interview   |
+| `component-context-builder` | Always first, captures component definition via interview   |
 | `component-benchmark-agent` | Research patterns, ARIA, and references                      |
 | `component-ux-agent`        | Usage guidelines, variants, states, anatomy                  |
 | `component-ui-agent`        | Visual spec with design tokens                               |
